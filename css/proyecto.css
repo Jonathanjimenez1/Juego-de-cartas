@@ -1,0 +1,303 @@
+body {
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction:column;
+  background: rgb(60,26,195);
+  background: linear-gradient(90deg, rgba(60,26,195,1) 8%, rgba(119,44,199,1) 42%, rgba(17,33,209,1) 100%);
+ 
+}
+
+p {text-align:center; color: white; font-size: smaller;}
+
+
+
+h4{color: rgb(235, 236, 238);
+  font-family: sans-serif;}
+
+
+.modal{border-radius: 10px;
+  box-shadow: 1px 1px 3px rgb(0, 0, 0, 0.25), 4px 4px 10px rgb(0, 0, 0, 0.2);
+  background: rgb(61, 36, 202);}
+ 
+
+
+
+#contadores{
+  display: flex;
+  justify-content:space-evenly;
+  align-items:center;
+  color: bisque;
+  display: none;
+  
+}
+
+.cabecera-num{font-family: 
+  Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  }
+
+.cabecera-titulo{ font-family: fantasy;
+  color: rgb(240, 20, 20);
+
+  
+
+
+}
+
+
+
+h1{text-align: center; color: rgb(250, 11, 35); 
+ font-family: monospace;}
+
+ #jugar{text-align: center; color: white; }
+
+#comenzar{ margin: auto; display: none;  color: brown;}
+
+
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+#boton{text-align: center;  
+    }
+
+button{  background-color: #f70909; 
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 16px;
+ }
+
+  
+
+#mesa {
+ 
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  display: none;
+  
+  
+}
+
+.tarjeta {
+  width: 5rem;
+  height: 5rem;
+  margin: 0.5rem;
+  border-radius: 0.3em;
+  background-image: var(--gradient);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: 0.3s;
+  cursor:pointer;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  background-image: url(Imagenes/EMOTICONOS.jpg);
+  background-size: 100%;
+  
+}
+
+.tarjeta__contenido {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+  background-color: rgb(243, 232, 232);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  padding-top: 0.4rem;
+  
+}
+
+
+
+.tarjeta__contenido::selection {
+  background: transparent;
+}
+
+.tarjeta.descubierta {
+  transform: rotateY(-180deg);
+}
+
+@keyframes error {
+  10%,
+  90% {
+    transform: rotateY(-180deg) translateX(-1px);
+  }
+  20%,
+  80% {
+    transform: rotateY(-180deg) translateX(2px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotateY(-180deg) translateX(-4px);
+  }
+  40%,
+  60% {
+    transform: rotateY(-180deg) translateX(4px);
+  }
+}
+
+@keyframes acierto {
+  from {
+    transform: rotateY(-180deg) scale3d(1, 1, 1);
+    opacity: 1;
+  }
+
+  25% {
+    transform: rotateY(-180deg) scale3d(1.1, 1.1, 1.1);
+    opacity: 1;
+  }
+
+  to {
+    transform: rotateY(-180deg) scale3d(1, 1, 1);
+    opacity: 0;
+  }
+}
+
+.acertada {
+  pointer-events: none;
+}
+
+.acertada .tarjeta__contenido {
+  animation: acierto 1.3s ease-in-out forwards;
+}
+
+.error {
+  animation: error 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+
+.reiniciar,.nivel, .ganador, .gameover, .tiempo{
+  display: none;  
+}
+
+.reiniciar, .nivel{
+ flex-direction: column;
+ margin: auto;
+ text-align: center;
+ 
+}
+
+.gameover , .ganador,.tiempo{  text-align: center; 
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(25, 130, 221);
+  flex-direction: column;
+  margin: auto;
+  
+  }
+
+ 
+ 
+
+  .visible{display:flex;}
+
+  .opciones{display: flex;
+   justify-content: space-around;
+  align-items: center;}
+
+  .invisible{visibility: hidden;}
+
+  .reinicio{
+             text-align: center;
+             margin: auto;
+             width: 100%;
+             
+  }
+
+  .nomostrar{display: none;}
+
+ 
+ 
+ 
+  /* Responsive*/
+ 
+  @media screen and (min-width:360px ) and (max-width: 800px) and (orientation:portrait)
+  { 
+  
+    
+
+
+  .contador-item{
+    font-size:smaller;
+    text-align: justify;
+    margin:3%;
+
+  }
+
+  #mesa{
+    width:70%;
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    display: none;
+  }
+  
+  h1{font-size: smaller;}
+
+  
+
+
+  p {text-align:center; color: white; font-size: smaller;}
+
+  .modal h4{display: none;}
+
+  
+
+  .subirnivel,.ganador, .tiempo,.gameover{margin-right: 8%;
+    
+  }
+
+
+  #subir{font-size: 15px}
+  
+  
+  
+  
+  
+
+
+  }
+
+
+  @media screen and  (min-width:700px ) and (max-width: 920px) and (orientation: landscape){
+
+    *{margin: 0; padding: 0;}
+
+    #mesa{
+     display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      display: none;
+    }
+
+    .modal h4{display: none;}
+
+
+    h1{font-size:larger}
+
+
+  };
+  
+  
+
+  
+ 

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/proyecto.css">
+    <title>Juego de cartas</title>
+</head>
+<body>
+
+      <header >
+     <div id="contadores">
+        <div class="contador-item">
+          <h4 class="cabecera-titulo">Movimientos</h4>
+          <div class="cabecera-num">
+            <span id="mov">0</span>/<span id="mov-total"></span>
+          </div>
+        </div>
+        <div id="cronometro" class="contador-item">
+          <h4 class="cabecera-titulo">Tiempo</h4>
+          <div class="cabecera-num">
+            <span id="minutos">00</span>:<span id="segundos">00</span>
+          </div>
+        </div>
+
+        <div id="nivel" class="contador-item">
+          <h4 class="cabecera-titulo">Niveles</h4>
+          <div class="cabecera-num"> <span id="niveles">1</span> </div>
+        </div>
+
+
+      </div>
+
+     </header>
+ 
+
+      <div id= "jugar"> <h1 > ✋ ¿Hola quieres jugar?  🤟 </h1> 
+        <p>Las reglas son muy sencillas, tienes límite de tiempo y de movimientos para descubrir todas las cartas, <br>
+           si te pasas de tiempo o número máximo de movimientos puedes volver a intentarlo todas las veces que quieras ¡buena suerte!</p>
+      
+      </div>
+           
+
+     <div id="comenzar"><h1> 💪  Comienza el juego ¡mucha suerte! 🤟 </h1></div>
+   
+    
+
+
+
+     <main >
+
+        <div id="boton" > <button onclick="cambiarfondo(); descubircartas();  comenzar();  ocultarjugar(); ocultarboton()" > Repartir cartas </button> </div>
+
+        <div id="mesa" >
+          
+          <div class="tarjeta "> 
+              
+               <div class="tarjeta__contenido " >  </div>   
+            
+            
+          </div>
+
+        </div>
+
+       </main>
+
+      <section class="opciones">
+
+        <div class="subirnivel ">
+
+           <div class="nivel modal ">
+
+               <h4>¡Muy bien! </h4>
+
+              <button id="subir">Siguiente nivel </button> 
+            </div>
+        
+        </div>
+
+
+        <div class="gameover " >
+          
+           <p> 😭 ¡Oh no! te has quedado sin movimientos 😭 </p>
+            <div> <button class="reinicio"> reiniciar </button> </div>
+        </div>
+
+        <div class="tiempo" >
+          
+          <p> 😭 ¡Oh no! te has quedado sin tiempo 😭 </p>
+          <div> <button class="reinicio"> reiniciar </button> </div>
+
+       </div>
+
+
+        <div class="ganador modal"  >
+          <p>  🏆 ¡Enhorabuena has completado todos los niveles! 🏆</p> <br>
+        
+          <button class="reinicio" onclick= "reiniciojuego()""> reiniciar </button> 
+
+        </div>
+
+
+
+         
+     
+      <div id="finalizar">
+
+          
+
+        <div class="reiniciar modal " >
+            <h4> ¡Buen trabajo¡ </h4>
+             <button class="reinicio"> reiniciar </button> 
+          </div> 
+
+
+       </div>
+
+      </section>
+
+      <audio
+      src="sonidos/acierto.mp3"
+      class="sonido"
+      id="sonido-acierto"
+      preload="auto"
+    >  </audio>
+
+      <audio
+      src="sonidos/error.mp3"
+      class="sonido"
+      id="sonido-error"
+      preload="auto"
+    > </audio>
+
+     <audio
+      src="sonidos/carta.mp3"
+      class="sonido"
+      id="sonido-carta"
+      preload="auto"
+    > </audio>
+
+    
+
+
+     <script src="js/Iniciar.js"></script>
+     <script src="js/variables-globales.js"></script>
+     <script src="js/gameover.js"></script>
+     <script src="js/movimientos.js"></script>
+     <script src="js/baraja-reparte.js"></script>
+     <script src="js/descubrir-comparar.js"></script> 
+     <script src="js/acierto-error.js"></script>
+     <script src="js/contador.js"></script> 
+     <script src="js/cambia-nivel.js"></script>
+     <script src="js/reiniciar.js"></script>
+    
+     
+     
+     
+    
+</body>
+
+</html>
